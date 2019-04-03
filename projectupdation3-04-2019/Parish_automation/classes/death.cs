@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace Parish_automation.classes
+{
+    public class death
+    {
+        string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+        SqlConnection con;
+        public void OpenConection()
+        {
+            con = new SqlConnection(ConnectionString);
+            con.Open();
+        }
+        public void CloseConnection()
+        {
+            con.Close();
+        }
+        public void ExecuteQueries(string Query_)
+        {
+            // Whenever you want to execute a query, like an insert, update or delete
+            //query then simply call this function 
+            //using the object of a class and pass your query to the function
+            SqlCommand cmd = new SqlCommand(Query_, con);
+            cmd.ExecuteNonQuery();
+        }
+        private string deathregno;
+        private string familyid;
+        private string name;
+        private string address;
+        private int age;
+        private string dodeath;
+        private string dofuneral;
+        private string priestname;
+        private string deathreason;
+
+        public string Deathregno { get => deathregno; set => deathregno = value; }
+        public string Familyid { get => familyid; set => familyid = value; }
+        public string Name { get => name; set => name = value; }
+        public string Address { get => address; set => address = value; }
+        public int Age { get => age; set => age = value; }
+        public string Dodeath { get => dodeath; set => dodeath = value; }
+        public string Dofuneral { get => dofuneral; set => dofuneral = value; }
+        public string Priestname { get => priestname; set => priestname = value; }
+        public string Deathreason { get => deathreason; set => deathreason = value; }
+
+        public void InsertMember_Parameter()
+        {
+            OpenConection();
+            string qry = "update  family_information1 set date_of_death=@dateofdeath,date_of_funeral=@dateoffuneral,death_reason=@deathreasonmname, status=@death where familyid=@familyid1 and name=@name";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            cmd.Parameters.AddWithValue("@familyid1",familyid );
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@address", address);
+            //cmd.Parameters.AddWithValue("@age", age);
+            cmd.Parameters.AddWithValue("@dateofdeath", dodeath);
+            cmd.Parameters.AddWithValue("@dateoffuneral", Dofuneral);
+            cmd.Parameters.AddWithValue("@death","Died");
+            cmd.Parameters.AddWithValue("@deathreasonmname", Deathreason);
+            cmd.Parameters.AddWithValue("@death", "Died");
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable ExecuteSelect()
+        {
+            OpenConection();
+
+            DataTable dt1 = new DataTable();
+            SqlCommand cmd2 = new SqlCommand("select family_id from Family_Register", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd2);// this will query your database and return the result to your datatable
+            da.Fill(dt1);
+            CloseConnection();
+            return dt1;
+        }
+    }
+
+}
