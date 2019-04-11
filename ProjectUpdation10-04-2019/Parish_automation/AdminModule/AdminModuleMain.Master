@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminModuleMain.master.cs" Inherits="Parish_automation.AdminModule.AdminModuleMain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 680px;
+        }
+        .auto-style2 {
+            height: 79px;
+            text-align: center;
+            font-weight: bold;
+            font-size: xx-large;
+            
+            background-color: #000000;
+        }
+        .auto-style4 {
+            width: 145px;
+            text-align: center;
+            
+            background-color: #000000;
+            height: 634px;
+        }
+        .auto-style6 {
+            
+        }
+        .auto-style7 {
+            width: 735px;
+            height: 634px;
+        }
+        .auto-style8 {
+            color: #FFFFFF;
+        }
+        ul
+        {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+        }
+       /* ul li
+        {
+            background-color:black;
+            border:1px solid black;
+            text-align:center;
+            width:200px;
+            height:40px;
+        }
+        ul li a
+        {
+            text-decoration:none;
+            display:block;
+        }
+        ul li a:hover
+        {
+            background-color:whitesmoke;
+        }
+        ul ul
+        {
+            position:absolute;
+            display:none;
+        }*/
+        </style>
+</head>
+<body style="height: 847px">
+        <form id="form1" runat="server">
+                 <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" colspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="66px" ImageUrl="~/Image/web-logo.gif" />
+                    <span class="auto-style8">SEHION ORHDOX CHURCH</span></td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                   <ul>
+                       <li>
+                          <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx" CssClass="auto-style6" ForeColor="White">Home</asp:HyperLink> 
+                       </li>
+                       <li>
+
+                       </li>
+                       <li>  
+                           <asp:HyperLink ID="HyperLink3" runat="server"  CssClass="auto-style6" ForeColor="White">Register</asp:HyperLink>
+                      
+
+                           <ul>
+                              <li>
+                                  <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminModule/BaptisamRegistration.aspx" CssClass="auto-style6" ForeColor="White">Baptisam Register</asp:HyperLink>
+                               </li>
+                               <li>
+                                   <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminModule/DeathRegistration.aspx" CssClass="auto-style6" ForeColor="White">Death Register</asp:HyperLink>
+                                </li>
+                              <li>
+                                   <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/AdminModule/MarriageRegistration.aspx" CssClass="auto-style6" ForeColor="White">Marriage Register</asp:HyperLink>
+                                </li>
+                              <li>
+                                   <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AdminModule/PrayerRegister.aspx" CssClass="auto-style6" ForeColor="White">Prayer Register</asp:HyperLink>
+                                </li>
+                              <li>
+                                   <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/AdminModule/AssociationMemberRegister.aspx" CssClass="auto-style6" ForeColor="White">Association Member Register</asp:HyperLink>
+                                </li>
+                             </ul>
+                        </li>
+                       <li>
+
+                       </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink4" runat="server" CssClass="auto-style6" ForeColor="White">certificates</asp:HyperLink>
+                            </li>
+                       <li>
+
+                       </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink7" runat="server" CssClass="auto-style6" ForeColor="White">View Details</asp:HyperLink>
+                             </li>
+                       <li>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/AdminModule/BirMarrDeaView.aspx" CssClass="auto-style6" ForeColor="White">BirthdayList,Death List,MarriageList</asp:HyperLink>
+
+                                                </li>
+                                                <li>
+                                                   <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/AdminModule/ViewAssociationMembers.aspx" CssClass="auto-style6" ForeColor="White">View Association Member Details</asp:HyperLink>
+
+                                                </li>
+                                            </ul>
+                           <li>
+
+                           </li>
+
+                             <li>
+                                 <asp:HyperLink ID="HyperLink9" runat="server" CssClass="auto-style6" ForeColor="White">Parish Hall Bookings</asp:HyperLink>
+                                </li>
+                 </ul>
+                </td>
+                <td class="auto-style7">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+               </td>
+               </tr>
+        </table>
+    </form>
+  </body>
+</html>
