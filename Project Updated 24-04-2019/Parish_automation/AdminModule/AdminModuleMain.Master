@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminModuleMain.master.cs" Inherits="Parish_automation.AdminModule.AdminModuleMain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 680px;
+        }
+        .auto-style2 {
+            height: 79px;
+            text-align: center;
+            font-weight: bold;
+            font-size: xx-large;
+            
+            background-color: #000000;
+        }
+        .auto-style4 {
+            width: 145px;
+            text-align: center;
+            
+            background-color: #000000;
+            height: 634px;
+        }
+        .auto-style7 {
+            width: 735px;
+            height: 634px;
+        }
+        .auto-style8 {
+            color: #FFFFFF;
+        }
+        ul
+        {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+        }
+       /* ul li
+        {
+            background-color:black;
+            border:1px solid black;
+            text-align:center;
+            width:200px;
+            height:40px;
+        }
+        ul li a
+        {
+            text-decoration:none;
+            display:block;
+        }
+        ul li a:hover
+        {
+            background-color:whitesmoke;
+        }
+        ul ul
+        {
+            position:absolute;
+            display:none;
+        }*/
+        </style>
+</head>
+<body style="height: 847px">
+        <form id="form1" runat="server">
+                 <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" colspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="66px" ImageUrl="~/Image/web-logo.gif" />
+                    <span class="auto-style8">SEHION ORHDOX CHURCH</span></td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:TreeView ID="TreeView1" runat="server" Width="65px">
+                        <Nodes>
+                            <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode Text="Register" Value="Register">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/BaptisamRegistration.aspx" Text="Baptisam" Value="Baptisam">
+                                    <asp:TreeNode NavigateUrl="~/AdminModule/MarriageRegistration.aspx" Text="Marriage" Value="Marriage">
+                                        <asp:TreeNode NavigateUrl="~/AdminModule/DeathRegistration.aspx" Text="Death" Value="Death">
+                                            <asp:TreeNode NavigateUrl="~/AdminModule/PrayerRegister.aspx" Text="Prayer" Value="Prayer">
+                                                <asp:TreeNode NavigateUrl="~/AdminModule/AssociationMemberRegister.aspx" Text="AssoMember." Value="AssoMember."></asp:TreeNode>
+                                            </asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="View Details" Value="View Details">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/CertificateRequest.aspx" Text="Certif.Request" Value="Certif.Request">
+                                    <asp:TreeNode NavigateUrl="~/AdminModule/ViewAssociationMembers.aspx" Text="Assoc.MembDetails" Value="Assoc.MembDetails">
+                                        <asp:TreeNode NavigateUrl="~/AdminModule/RegisterRequest.aspx" Text="Register Request" Value="Register Request">
+                                            <asp:TreeNode NavigateUrl="~/AdminModule/BirMarrDeaView.aspx" Text="Bap.Marr.Death" Value="Bap.Marr.Death"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Parish Hall Booking" Value="Parish Hall Booking"></asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td class="auto-style7">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+               </td>
+               </tr>
+        </table>
+    </form>
+  </body>
+</html>
