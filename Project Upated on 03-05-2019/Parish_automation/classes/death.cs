@@ -42,6 +42,7 @@ namespace Parish_automation.classes
         private string date_from;
         private string date_to;
         private string updatebutton;
+        private string updatebutton2;
 
         public string Deathregno { get => deathregno; set => deathregno = value; }
         public string Familyid { get => familyid; set => familyid = value; }
@@ -57,6 +58,7 @@ namespace Parish_automation.classes
         public string Date_from { get => date_from; set => date_from = value; }
         public string Date_to { get => date_to; set => date_to = value; }
         public string Updatebutton { get => updatebutton; set => updatebutton = value; }
+        public string Updatebutton2 { get => updatebutton2; set => updatebutton2 = value; }
 
         public void InsertMember_Parameter()
         {
@@ -156,6 +158,37 @@ namespace Parish_automation.classes
 
             cmd.Parameters.AddWithValue("@family", updatebutton);
             
+            cmd.ExecuteNonQuery();
+        }
+        public DataTable DisplyParishRequestDetails()
+        {
+            OpenConection();
+            DataTable dtReg = new DataTable();
+            string qry = "select name,address,mobno,emailid,audiname,eventtype,eventdate,noofdays,amount,is_approved, " +
+                        " CASE WHEN is_approved=0 THEN 'NOT APPROVED' " +
+                        " ELSE 'APPROVED' END AS APR_STATUS " +
+                        " from ParishHallBooking  ";
+            /*       string qry = "select family_id,housename,place,resphoneno,family_head_name, " +
+                                " CASE WHEN is_approved=0 THEN 'NOT APPROVED' " +
+                                " ELSE 'APPROVED' END AS APR_STATUS, "+
+                                " CASE WHEN is_approved=0 THEN 'false' " +
+                                " ELSE 'true' END AS APR_ENABLED " +
+                                "from Family_Register  ";*/
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);// this will query your database and return the result to your datatable
+            da.Fill(dtReg);
+            CloseConnection();
+            return dtReg;
+        }
+        public void UpdateTable2()
+        {
+            OpenConection();
+
+            SqlCommand cmd = new SqlCommand("update ParishHallBooking  set is_approved='1' where name=@family1", con);
+
+            cmd.Parameters.AddWithValue("@family1", updatebutton2);
+
             cmd.ExecuteNonQuery();
         }
 

@@ -30,6 +30,7 @@ namespace Parish_automation.classes
         private string eventdate;
         private string eventdays;
         private string amount;
+        private string isapproved;
         private string id;
 
         public string Name1 { get => name1; set => name1 = value; }
@@ -42,10 +43,12 @@ namespace Parish_automation.classes
         public string Eventdays { get => eventdays; set => eventdays = value; }
         public string Amount { get => amount; set => amount = value; }
         public string Id { get => id; set => id = value; }
+        public string Isapproved { get => isapproved; set => isapproved = value; }
+
         public void InsertParameter()
         {
             OpenConection();
-            string qry = "insert into ParishHallBooking values(@name,@address,@mobno,@email,@auditype,@eventtype,@eventdate,@noofdays,@amount);";
+            string qry = "insert into ParishHallBooking values(@name,@address,@mobno,@email,@auditype,@eventtype,@eventdate,@noofdays,@amount,@approved);";
             SqlCommand cmd = new SqlCommand(qry, con);
 
             cmd.Parameters.AddWithValue("@name", name1);
@@ -57,6 +60,7 @@ namespace Parish_automation.classes
             cmd.Parameters.AddWithValue("@eventdate", eventdate);
             cmd.Parameters.AddWithValue("@noofdays", eventdays);
             cmd.Parameters.AddWithValue("@amount", amount);
+            cmd.Parameters.AddWithValue("@approved", '0');
 
             cmd.ExecuteNonQuery();
 

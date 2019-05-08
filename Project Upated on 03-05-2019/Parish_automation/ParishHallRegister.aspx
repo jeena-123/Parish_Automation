@@ -50,7 +50,7 @@
                 <asp:Label ID="Label3" runat="server" Text="Mob"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtmob" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtmobile" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>

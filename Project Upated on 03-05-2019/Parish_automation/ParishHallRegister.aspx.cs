@@ -11,7 +11,7 @@ namespace Parish_automation
 {
     public partial class ParishHallRegister : System.Web.UI.Page
     {
-        BookingClass obj = new BookingClass();
+        Registerbooking obj = new Registerbooking();
         public double audi_amount;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,16 +20,17 @@ namespace Parish_automation
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            obj.Name = txtname.Text;
+            obj.Name1 = txtname.Text;
+            
             obj.Address = txtaddress.Text;
-            obj.Mob_no =Convert.ToDouble(txtmob.Text);
-            obj.Emailid = txtemail.Text;
-            obj.Auditorium_name = ddlaudiname.Text.ToString();
-            obj.Event_type = ddleventtype.Text.ToString();
-            obj.Event_date = txtdate.Text;
-            obj.No_of_days = ddlnoofdays.Text.ToString();
+            obj.Mobno = txtmobile.Text;
+            obj.Email = txtemail.Text;
+            obj.Audiname = ddlaudiname.Text.ToString();
+            obj.Eventtype = ddleventtype.Text.ToString();
+            obj.Eventdate = txtdate.Text;
+            obj.Eventdays = ddlnoofdays.Text.ToString();
             obj.Amount = txtamount.Text;
-            obj.InsertBookingDetails();
+            obj.InsertParameter();
 
         }
 

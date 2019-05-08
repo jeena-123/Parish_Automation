@@ -58,13 +58,13 @@ namespace Parish_automation {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// txtmob control.
+        /// txtmobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmob;
+        protected global::System.Web.UI.WebControls.TextBox txtmobile;
         
         /// <summary>
         /// Label9 control.

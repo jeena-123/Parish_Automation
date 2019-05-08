@@ -78,7 +78,9 @@
                 <td class="auto-style4">
                     <asp:TreeView ID="TreeView1" runat="server" Width="65px">
                         <Nodes>
-                            <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Home" Value="Home">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/ParishHallRegistration.aspx" Text="ParishHallRegister" Value="ParishHallRegister"></asp:TreeNode>
+                            </asp:TreeNode>
                             <asp:TreeNode Text="Register" Value="Register">
                                 <asp:TreeNode NavigateUrl="~/AdminModule/BaptisamRegistration.aspx" Text="Baptisam" Value="Baptisam">
                                     <asp:TreeNode NavigateUrl="~/AdminModule/MarriageRegistration.aspx" Text="Marriage" Value="Marriage">

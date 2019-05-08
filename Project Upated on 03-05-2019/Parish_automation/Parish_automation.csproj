@@ -121,6 +121,7 @@
     <Content Include="AdminModule\ChurchIncomeRegister.aspx" />
     <Content Include="AdminModule\DeathRegistration.aspx" />
     <Content Include="AdminModule\MarriageRegistration.aspx" />
+    <Content Include="AdminModule\ParishHallRegistration.aspx" />
     <Content Include="AdminModule\PrayerRegister.aspx" />
     <Content Include="AdminModule\RegisterMemberView.aspx" />
     <Content Include="AdminModule\RegisterRequest.aspx" />
@@ -281,6 +282,13 @@
     </Compile>
     <Compile Include="AdminModule\MarriageRegistration.aspx.designer.cs">
       <DependentUpon>MarriageRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\ParishHallRegistration.aspx.cs">
+      <DependentUpon>ParishHallRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\ParishHallRegistration.aspx.designer.cs">
+      <DependentUpon>ParishHallRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminModule\PrayerRegister.aspx.cs">
       <DependentUpon>PrayerRegister.aspx</DependentUpon>
