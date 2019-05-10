@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Demo.master.cs" Inherits="Parish_automation.Demo" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+	        color: #0000CC;
+	        font-weight: bold;
+	        font-size: 15px;
+        }
+        .style2 {
+	      color: #000000;
+	      font-weight: bold;
+	      font-size: 13px;
+
+        }
+        
+        
+        .style3{
+            height:7px;
+
+        }
+        .style4{
+            width:100%;
+            border:0;
+            
+        }
+        .style5{
+            height:27px;
+                
+        }
+        
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 1391px;
+        }
+        .auto-style3 {
+            width: 143px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" class="auto-style2">
+        <div>
+        </div>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style3">
+                    <asp:TreeView ID="TreeView1" runat="server">
+                        <Nodes>
+                            <asp:TreeNode Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode Text="Register" Value="Register">
+                                <asp:TreeNode Text="Baptisam" Value="Baptisam">
+                                    <asp:TreeNode Text="Marriage" Value="New Node"></asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
