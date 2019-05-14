@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VicerHome.master.cs" Inherits="Parish_automation.VicerModule.VicerHome" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            background-color: #006666;
+        }
+        .auto-style2 {
+            width: 100%;
+            height: 586px;
+        }
+        .auto-style3 {
+            width: 255px;
+            background-color: #006666;
+        }
+        .auto-style4 {
+            font-family: Algerian;
+            font-weight: bold;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Image ID="Image1" runat="server" Height="87px" ImageUrl="~/Image/web-logo.gif" />
+                        <span class="auto-style4">SEHION ORTHDOX CHURCH</span></td>
+                </tr>
+            </table>
+        </div>
+        <table class="auto-style2">
+            <tr>
+                <td class="auto-style3">
+                    <asp:TreeView ID="TreeView1" runat="server" ForeColor="White">
+                        <Nodes>
+                            <asp:TreeNode Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode Text="View" Value="View">
+                                <asp:TreeNode NavigateUrl="~/VicerModule/CertificateRequest.aspx" Text="certificate request" Value="certificate request">
+                                    <asp:TreeNode NavigateUrl="~/VicerModule/AmountPaidList.aspx" Text="Income List" Value="Income List">
+                                        <asp:TreeNode NavigateUrl="~/VicerModule/incomefixing.aspx" Text="Add Income" Value="Add Income"></asp:TreeNode>
+                                    </asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
