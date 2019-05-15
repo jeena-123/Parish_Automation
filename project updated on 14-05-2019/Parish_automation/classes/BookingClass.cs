@@ -58,7 +58,7 @@ namespace Parish_automation.classes
             OpenConection();
 
             DataTable dtCheck = new DataTable();
-            SqlCommand cmd = new SqlCommand("select id from ParishHallBooking where eventdate=@edate and audiname=@eparishhall", con);
+            SqlCommand cmd = new SqlCommand("select id from ParishHallBooking where eventdate=@edate and audiname in (@eparishhall,'Both')", con);
             cmd.Parameters.AddWithValue("@edate", event_date);
             cmd.Parameters.AddWithValue("@eparishhall", parish_hall);
             SqlDataAdapter da = new SqlDataAdapter(cmd);// this will query your database and return the result to your datatable

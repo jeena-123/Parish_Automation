@@ -49,7 +49,10 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style11">&nbsp;</td>
+            <td class="auto-style11">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td>
             <td class="auto-style13">&nbsp;</td>
             <td class="auto-style14">&nbsp;</td>
             <td>&nbsp;</td>
@@ -113,7 +116,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Certificate Type"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="ddlcertificate" runat="server" OnSelectedIndexChanged="ddlcertificate_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlcertificate" runat="server" OnSelectedIndexChanged="ddlcertificate_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem>....Select......</asp:ListItem>
                     <asp:ListItem>Marriage</asp:ListItem>
                     <asp:ListItem>Baptisam</asp:ListItem>
@@ -130,11 +133,17 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label9" runat="server" Text="Name Of Dead Person"></asp:Label>
-            </td>
-            <td class="auto-style13">
-                <asp:TextBox ID="deadname" runat="server"></asp:TextBox>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <table class="auto-style10">
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Label ID="Label9" runat="server" Text="Name Of Dead Person"></asp:Label>
+                                &nbsp;</td>
+                        <td>
+                                    <asp:TextBox ID="deadname" runat="server"></asp:TextBox>
+                                </td>
+                    </tr>
+                </table>
             </td>
             <td class="auto-style14">
                 <asp:Label ID="Label6" runat="server" Text="Purpose"></asp:Label>

@@ -16,6 +16,13 @@ namespace Parish_automation.AdminModule
         {
             obj.Updatebutton = Session["id"].ToString();
             obj.Updatebutton2 = Session["member_id"].ToString();
+           /* DataTable dt1 = new DataTable();
+            dt1 = obj.PrintDeathname();
+            if (dt1.Rows.Count > 0)
+            {
+                name.Text = Convert.ToString(dt1.Rows[0][0]);
+                
+            }*/
             DataTable dt = new DataTable();
             dt = obj.PrintDeathCertificate();
             if (dt.Rows.Count > 0)

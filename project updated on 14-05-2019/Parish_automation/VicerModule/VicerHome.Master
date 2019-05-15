@@ -23,7 +23,8 @@
         .auto-style4 {
             font-family: Algerian;
             font-weight: bold;
-            font-size: x-large;
+            font-size: xx-large;
+            color: #00FFFF;
         }
     </style>
 </head>
@@ -34,7 +35,7 @@
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Image ID="Image1" runat="server" Height="87px" ImageUrl="~/Image/web-logo.gif" />
-                        <span class="auto-style4">SEHION ORTHDOX CHURCH</span></td>
+                        <span class="auto-style4">SEHION ORTHODOX CHURCH</span></td>
                 </tr>
             </table>
         </div>
@@ -43,7 +44,7 @@
                 <td class="auto-style3">
                     <asp:TreeView ID="TreeView1" runat="server" ForeColor="White">
                         <Nodes>
-                            <asp:TreeNode Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode Text="Home" Value="Home" NavigateUrl="~/Default.aspx"></asp:TreeNode>
                             <asp:TreeNode Text="View" Value="View">
                                 <asp:TreeNode NavigateUrl="~/VicerModule/CertificateRequest.aspx" Text="certificate request" Value="certificate request">
                                     <asp:TreeNode NavigateUrl="~/VicerModule/AmountPaidList.aspx" Text="Income List" Value="Income List">

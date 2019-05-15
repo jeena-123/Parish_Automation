@@ -51,8 +51,8 @@ namespace Parish_automation.classes
         private DateTime cdate;
         private string kfixedamount;
         private string mfixedamount;
-        private string kpaid;
-        private string mpaid;
+        private double kpaid;
+        private double mpaid;
         private DateTime date;
 
 
@@ -79,8 +79,8 @@ namespace Parish_automation.classes
         public string Kfixedamount { get => kfixedamount; set => kfixedamount = value; }
         public string Mfixedamount { get => mfixedamount; set => mfixedamount = value; }
         public DateTime Date { get => date; set => date = value; }
-        public string Kpaid { get => kpaid; set => kpaid = value; }
-        public string Mpaid { get => mpaid; set => mpaid = value; }
+        public double Kpaid { get => kpaid; set => kpaid = value; }
+        public double Mpaid { get => mpaid; set => mpaid = value; }
 
         public DataTable ExecuteSelect()
         {
@@ -154,29 +154,27 @@ namespace Parish_automation.classes
             CloseConnection();
             return dtfixed;
         }
-        public string kPaidAmount()
+        public DataTable kPaidAmount()
         {
             OpenConection();
-            SqlCommand cmd = new SqlCommand("select amount from ChurchIncomeRegister where familyid=@fid and accountDescription='KendraVihidham'", con);
+            DataTable dtkpaid = new DataTable();
+            SqlCommand cmd = new SqlCommand("select sum(amount) as pamount from ChurchIncomeRegister where familyid=@fid and accountDescription=' KendraVihidham'", con);
             cmd.Parameters.AddWithValue("@fid",fyid);
-            object cnt = cmd.ExecuteScalar();
-            if (cnt != DBNull.Value)
-            {
-                kpaid = (string)cnt;
-            }
-            return kpaid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dtkpaid);
+            CloseConnection();
+            return dtkpaid;
         }
-        public string mPaidAmount()
+        public DataTable mPaidAmount()
         {
             OpenConection();
-            SqlCommand cmd = new SqlCommand("select amount from ChurchIncomeRegister where family_id=@fid and accountDescription='Masavari'", con);
+            DataTable dtmpaid = new DataTable();
+            SqlCommand cmd = new SqlCommand("select sum(amount) as mamount from ChurchIncomeRegister where familyid=@fid and accountDescription='Masavari'", con);
             cmd.Parameters.AddWithValue("@fid", fyid);
-            object cnt = cmd.ExecuteScalar();
-            if (cnt != DBNull.Value)
-            {
-                mpaid = (string)cnt;
-            }
-            return mpaid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dtmpaid);
+            CloseConnection();
+            return dtmpaid;
         }
     }     
 }

@@ -94,7 +94,7 @@ namespace Parish_automation.AdminModule
             incom.Mobno = txtmobno.Text;
             incom.Ward = txtward.Text;
             incom.Account_description = ddlaccountdescription.Text;
-            incom.Amount = txtamount.Text;
+            incom.Amount =Convert.ToDouble(txtamount.Text.ToString());
             incom.InsertMember_Parameters();
 
              txtdate.Text="";

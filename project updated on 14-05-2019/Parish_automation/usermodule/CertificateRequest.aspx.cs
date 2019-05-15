@@ -39,6 +39,7 @@ namespace Parish_automation.usermodule
             obj.Membermob = mob.Text;
             obj.Date = date.Text;
             obj.Certificatetype = ddlcertificate.Text;
+            obj.Namedead = deadname.Text;
             obj.Purpose = txtpurpose.Text;
             obj.InsertMember_ParameterValues();
 
@@ -84,7 +85,7 @@ namespace Parish_automation.usermodule
 
         protected void ddlcertificate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlcertificate.ToString() == "Death")
+            if (ddlcertificate.SelectedItem.ToString() == "Death")
             {
                 deadname.Visible = true;
                 Label9.Visible = true;

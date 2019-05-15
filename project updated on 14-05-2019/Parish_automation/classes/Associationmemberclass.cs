@@ -44,7 +44,7 @@ namespace Parish_automation.classes
         private string mobno;
         private string ward;
         private string account_description;
-        private string amount;
+        private double amount;
         private string date;
         private string familyid1;
         private string membername;
@@ -59,6 +59,7 @@ namespace Parish_automation.classes
         private string familyyidd;
         private string masavri;
         private string kendravihitham;
+        private string namedead;
 
 
         public string Familyid { get => familyid; set => familyid = value; }
@@ -77,7 +78,6 @@ namespace Parish_automation.classes
         public string Mobno { get => mobno; set => mobno = value; }
         public string Ward { get => ward; set => ward = value; }
         public string Account_description { get => account_description; set => account_description = value; }
-        public string Amount { get => amount; set => amount = value; }
         public string Familyid1 { get => familyid1; set => familyid1 = value; }
         public string Membername { get => membername; set => membername = value; }
         public string Memberaddress { get => memberaddress; set => memberaddress = value; }
@@ -92,6 +92,8 @@ namespace Parish_automation.classes
         public string Familyyidd { get => familyyidd; set => familyyidd = value; }
         public string Masavri { get => masavri; set => masavri = value; }
         public string Kendravihitham { get => kendravihitham; set => kendravihitham = value; }
+        public double Amount { get => amount; set => amount = value; }
+        public string Namedead { get => namedead; set => namedead = value; }
 
         public void InsertMember_Parameter()
         {
@@ -207,13 +209,13 @@ namespace Parish_automation.classes
             cmd.Parameters.AddWithValue("@mob", mobno);
             cmd.Parameters.AddWithValue("@ward", ward);
             cmd.Parameters.AddWithValue("@accountdescription",account_description);
-            cmd.Parameters.AddWithValue("@amount", amount);
+            cmd.Parameters.AddWithValue("@amount", Amount);
             cmd.ExecuteNonQuery();
         }
         public void InsertMember_ParameterValues()
         {
             OpenConection();
-            string qry = "insert into  certificate_Request values (@familyid1,@name1,@address1,@mob1,@date,@certificate,@purpose,@approved);";
+            string qry = "insert into  certificate_Request values (@familyid1,@name1,@address1,@mob1,@date,@certificate,@deadname,@purpose,@approved);";
           SqlCommand cmd = new SqlCommand(qry, con);
             cmd.Parameters.AddWithValue("@familyid1", id);
             cmd.Parameters.AddWithValue("@name1",membername);
@@ -221,7 +223,8 @@ namespace Parish_automation.classes
             cmd.Parameters.AddWithValue("@mob1", membermob);
             cmd.Parameters.AddWithValue("@date", Date);
             cmd.Parameters.AddWithValue("@certificate", certificatetype);
-
+            cmd.Parameters.AddWithValue("@deadname", Namedead);
+         
             cmd.Parameters.AddWithValue("@purpose", purpose);
             cmd.Parameters.AddWithValue("@approved", '0');
             

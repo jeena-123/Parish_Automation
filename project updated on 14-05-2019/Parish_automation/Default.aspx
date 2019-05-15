@@ -8,7 +8,7 @@
         <tr>
             <td class="text-left" style="font-family: Arial; font-weight: bold; font-size: xx-large; height: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Image ID="Image1" runat="server" Height="111px" ImageUrl="~/Image/web-logo.gif" Width="111px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEHION&nbsp; ORTHODOX&nbsp;&nbsp; CHURCH</td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KOTHALA&nbsp;&nbsp;SEHION&nbsp; ORTHODOX&nbsp; SYRIAN&nbsp; CHURCH</td>
         </tr>
         <tr>
             <td>

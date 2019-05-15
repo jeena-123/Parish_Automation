@@ -88,6 +88,17 @@ namespace Parish_automation.classes
             CloseConnection();
             return dt;
         }
+        /*public DataTable PrintDeathname()
+        {
+            OpenConection();
+            DataTable dt1 = new DataTable();
+            SqlCommand cmd2 = new SqlCommand("select namedied from certificate_Request where family_id=@family_id", con);
+            cmd2.Parameters.AddWithValue("@family_id", updatebutton);
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt1);
+            CloseConnection();
+            return dt1;
+        }*/
         public void UpdateTable1()
         {
             OpenConection();
