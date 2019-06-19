@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminModuleMain.master.cs" Inherits="Parish_automation.AdminModule.AdminModuleMain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 680px;
+        }
+        .auto-style2 {
+            height: 79px;
+            text-align: center;
+            font-weight: bold;
+            font-size: xx-large;
+            
+            background-color: #336699;
+        }
+        .auto-style4 {
+            width: 145px;
+            text-align: center;
+            text-decoration-color:ghostwhite;
+            background-color: #336699;
+            
+            height: 634px;
+        }
+        .auto-style7 {
+            width: 735px;
+            height: 634px;
+        }
+        .auto-style8 {
+            color: #FFFFFF;
+            font-family: Algerian;
+        }
+        ul
+        {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+        }
+       
+        </style>
+</head>
+<body style="height: 847px">
+        <form id="form1" runat="server">
+                 <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" colspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="66px" ImageUrl="~/Image/web-logo.gif" />
+                    <span class="auto-style8">SEHION ORTHODOX CHURCH</span></td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:TreeView ID="TreeView1" runat="server" Width="16px" style='color: red' ForeColor="White" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                        <LeafNodeStyle ForeColor="White" />
+                        <Nodes>
+                            <asp:TreeNode NavigateUrl="~/AdminModule/AdminHomePage.aspx" Text="Home"   Value="Home" Target="_blank" />
+                            <asp:TreeNode Text="Register & Issue Certificate" Value="Register" Target="_blank">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/BaptisamRegistration.aspx" Text="Baptisam" Value="Baptisam" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/MarriageRegistration.aspx" Text="Marriage" Value="Marriage" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/DeathRegistration.aspx" Text="Death" Value="Death" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/viewapprovedcertificate.aspx" Text="Certif.Request" Value="Certif.Request" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/BirMarrDeaView.aspx" Text="Bap.Marr.Death" Value="Bap.Marr.Death" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/EditProfile.aspx" Text="EditProfile" Value="EditProfile" />
+
+                               
+                               
+                                
+                                
+                              </asp:TreeNode>
+                                                
+                            <asp:TreeNode Text="Prayer Register" Value="View Details" Target="_blank">
+                                 <asp:TreeNode NavigateUrl="~/AdminModule/PrayerRegister.aspx" Text=" Register Prayer" Value="Prayer" />
+                                 <asp:TreeNode NavigateUrl="~/AdminModule/viewPrayerList.aspx" Text=" view Prayer" Value="Prayer" />
+                            </asp:TreeNode>
+                            
+                            <asp:TreeNode Text="Association Register" Value="View Details" Target="_blank">
+                                 <asp:TreeNode NavigateUrl="~/AdminModule/AssociationMemberRegister.aspx" Text="AssoMember." Value="AssoMember." />
+                                 <asp:TreeNode NavigateUrl="~/AdminModule/ViewAssociationMembers.aspx" Text="Assoc.MembDetails" Value="Assoc.MembDetails" />
+                            </asp:TreeNode>  
+                            
+                            <asp:TreeNode Text="Income & Expense" Value="View Details" Target="_blank">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/ChurchIncomeRegister.aspx" Text="Income Register" Value="Income Register" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/ExpenseRegister.aspx" Text="Expense Register" Value="Income Register" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/AmountPaidList.aspx" Text="Paid List" Value="Paid List" />
+                            </asp:TreeNode>
+                           <asp:TreeNode Text="Request Approval" Value="View Details" Target="_blank">
+                                <asp:TreeNode NavigateUrl="~/AdminModule/RegisterRequest.aspx" Text="Register Request" Value="Register Request" />
+                                <asp:TreeNode NavigateUrl="~/AdminModule/RegisterMemberView.aspx" Text="Registered Members" Value="Registered Members" />
+                               <asp:TreeNode NavigateUrl="~/AdminModule/ParishHallRegisterRequest.aspx" Text="Parish Hall Request" Value="Parish Hall Request" />
+                         </asp:TreeNode>
+                        <asp:TreeNode Text="Add Vicar" Value="Parish Hall Booking">
+                              <asp:TreeNode NavigateUrl="~/AdminModule/AddVicer.aspx" Text="Add Vicer" Value="Add Vicer" />
+                            <asp:TreeNode NavigateUrl="~/AdminModule/Editvicer.aspx" Text="Edit Vicer" Value="Add Vicer" />
+                            </asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Logout" Value="Logout" >
+                                </asp:TreeNode>
+                        </Nodes>
+                        <RootNodeStyle ForeColor="#66FF33" />
+                    </asp:TreeView>
+                </td>
+                <td class="auto-style7">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+               </td>
+               </tr>
+        </table>
+    </form>
+  </body>
+</html>
