@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserModule.master.cs" Inherits="Parish_automation.usermodule.UserModule" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+        .auto-style2 {
+            width: 100%;
+            height: 72px;
+            
+        }
+        .auto-style4 {
+            height: 123px;
+            text-align: center;
+            background-color: #669999;
+        }
+        .auto-style5 {
+            width: 100%;
+            height: 617px;
+        }
+        .auto-style7 {
+            width: 258px;
+            text-align: center;
+            background-color: #669999;
+        }
+        .auto-style8 {
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style2">
+            <tr>
+                <td class="auto-style4">
+                    <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="~/Image/web-logo.gif" Width="86px" />
+                &nbsp;&nbsp; <span class="auto-style8">SEHION ORTHODOX CHURCH,KOTHALA</span></td>
+            </tr>
+        </table>
+        <table class="auto-style5">
+            <tr>
+                <td class="auto-style7">
+                    
+                    <br />
+                    <asp:TreeView ID="TreeView2" runat="server" ForeColor="White" Height="259px">
+                        <Nodes>
+                            <asp:TreeNode NavigateUrl="~/usermodule/UserProfile.aspx" Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/usermodule/memberregister.aspx" Text="Member Register" Value="Member Register"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/usermodule/CertificateRequest.aspx" Text="Certificate Request" Value="Certificate Request"></asp:TreeNode>
+                            <asp:TreeNode Text="view List" Value="view" >
+                                <asp:TreeNode Text="Paid List" Value="Paid List" NavigateUrl="~/usermodule/paidList.aspx" />
+                                <asp:TreeNode Text="Due List" Value="Due List" NavigateUrl="~/usermodule/View_Dues.aspx" />
+                                 <asp:TreeNode NavigateUrl="~/usermodule/userviewcertificate.aspx" Text="view certificate" Value="view certificate" />
+                             </asp:TreeNode>
+                            
+                            <asp:TreeNode Text="Parish Hall Booking" Value="Parish Hall Booking">
+                                <asp:TreeNode NavigateUrl="~/usermodule/userparishavailability.aspx" Text="Check Availability" Value="Check Availability">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Logout" Value="Home"></asp:TreeNode>
+                            </asp:TreeNode>
+                            
+                        </Nodes>
+                        <ParentNodeStyle ForeColor="#66FFFF" />
+                        <RootNodeStyle ForeColor="#FF99CC" />
+                    </asp:TreeView>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </td>
+                <td>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
